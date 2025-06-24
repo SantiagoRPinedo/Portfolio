@@ -1,0 +1,225 @@
+{
+  "perfil": {
+    "nombre": {
+      "es": "Santiago Pinedo",
+      "en": "Santiago Pinedo"
+    },
+    "titulo": {
+      "es": "Ingeniero en Computación",
+      "en": "Computer Engineer"
+    },
+    "subtitulo": {
+      "es": "Soy un completo apasionado por el análisis de datos, inteligencia artificial, diseño y creación de videojuegos. Mi actividad preferida es viajar.",
+      "en": "I am passionate about data analysis, artificial intelligence, design, and video game creation. My favorite activity is traveling."
+    },
+    "imagen_perfil": "images/profile5.jpg"
+  },
+  "habilidades": [
+    { "nombre": "Python", "icono": "icons/python.svg" },
+    { "nombre": "Java", "icono": "icons/java.svg" },
+    { "nombre": "Flask", "icono": "icons/flask.svg" },
+    { "nombre": "Blender", "icono": "icons/blender.svg" },
+    { "nombre": "Figma", "icono": "icons/figma.svg" },
+    { "nombre": "Unity", "icono": "icons/unity.svg" },
+    { "nombre": "C#", "icono": "icons/csharp.svg" },
+    { "nombre": "Git", "icono": "icons/git.svg" },
+    { "nombre": "JavaScript", "icono": "icons/javascript.svg" },
+    { "nombre": "CSS", "icono": "icons/css.svg" },
+    { "nombre": "Unreal Engine", "icono": "icons/unreal.svg" },
+    { "nombre": "C++", "icono": "icons/cmas.svg" },
+    { "nombre": "Go", "icono": "icons/go.svg" },
+    { "nombre": "HTML", "icono": "icons/html.svg" },
+    { "nombre": "PostgreSQL", "icono": "icons/postgresql.svg" },
+    { "nombre": "MySQL", "icono": "icons/mysql.svg" },
+    { "nombre": "OracleDB", "icono": "icons/oracle.svg" },
+    { "nombre": "AdobeXD", "icono": "icons/adobe.svg" },
+    { "nombre": "Jenkins", "icono": "icons/jenkins.svg" },
+    { "nombre": "OpenCV", "icono": "icons/opencv.svg" },
+    { "nombre": "Google Cloud", "icono": "icons/googlecloud.svg" }
+  ],
+  "proyectos_personales": [
+    {
+      "id": "proj-1",
+      "titulo": { "es": "Galaxy Shooter", "en": "Galaxy Shooter" },
+      "resumen": { "es": "Videojuego 2D", "en": "2D Video Game" },
+      "descripcion_completa": [
+        { "es": "Videojuego 2D desarrollado en Unity.", "en": "2D video game developed in Unity." },
+        { "es": "C# para programación de mecánicas y funcionamiento de UI.", "en": "C# for mechanics programming and UI functionality." },
+        { "es": "Manejo de Prefabs y optimización de código.", "en": "Handling of Prefabs and code optimization." },
+        { "es": "Uso de UI Manager, Spawn Manager y otras herramientas de Unity.", "en": "Use of UI Manager, Spawn Manager, and other Unity tools." }
+      ],
+      "tags": ["Unity IDE", "C#", "Game Design", "UX Design"],
+      "img": "images/galaxy.jpg",
+      "url_repo": "https://github.com/SantiagoRPinedo/GalaxyShooterGit"
+    },
+    {
+      "id": "proj-2",
+      "titulo": { "es": "Bot para Atención Hotelera", "en": "Hospitality Service Bot" },
+      "resumen": { "es": "Bot consejero en el área hotelera.", "en": "Advisory bot for the hospitality sector." },
+      "descripcion_completa": [
+        { "es": "Integración de un LLM con ChatGPT 4.", "en": "Integration of an LLM with ChatGPT 4." },
+        { "es": "Procesamiento de entrada de usuario para dar recomendaciones y planes de acción.", "en": "Processing user input to provide recommendations and action plans." },
+        { "es": "Uso de Streamlit para creación rápida de una interfaz de usuario para un MVP.", "en": "Use of Streamlit for rapid creation of a user interface for an MVP." },
+        { "es": "Uso de Python y Flask para conexión con API de OpenAI.", "en": "Use of Python and Flask to connect with the OpenAI API." }
+      ],
+      "tags": ["Python", "API", "LLM", "ChatGPT", "StreamLit", "Machine Learning"],
+      "img": "images/paradero.png",
+      "url_repo": "https://github.com/SantiagoRPinedo/ParaderoAI"
+    },
+    {
+      "id": "proj-3",
+      "titulo": { "es": "House Prices Prediction", "en": "House Prices Prediction" },
+      "resumen": { "es": "Modelo de machine learning para predicción de costos de casas.", "en": "Machine learning model for house price prediction." },
+      "descripcion_completa": [
+        { "es": "Uso de regresión lineal para predicción de costos de casas.", "en": "Use of linear regression for house price prediction." },
+        { "es": "Manejo de datos con Python, Pandas y Numpy; se realizó proceso de ETL para el entrenamiento del modelo.", "en": "Data handling with Python, Pandas, and Numpy; an ETL process was performed for model training." },
+        { "es": "Modelo evaluado bajo el F1 score.", "en": "Model evaluated using the F1 score." },
+        { "es": "Este proyecto fue realizado en equipo, fomentando colaboración y coordinación para lograr un buen entregable.", "en": "This project was carried out as a team, promoting collaboration and coordination to achieve a good deliverable." }
+      ],
+      "tags": ["Python", "Linear Regression", "Pandas", "Numpy", "Machine Learning", "sklearn", "Python Notebook", "Seaborn", "Keras"],
+      "img": "images/HousePrediction.jpg",
+      "url_repo": "https://github.com/SantiagoRPinedo/HousePricesCompetition/"
+    },
+    {
+      "id": "proj-4",
+      "titulo": { "es": "Algoritmo Genético", "en": "Genetic Algorithm" },
+      "resumen": { "es": "Algoritmo genético para mejora de exposición de luz en imágenes oscuras.", "en": "Genetic algorithm to improve light exposure in dark images." },
+      "descripcion_completa": [
+        { "es": "Este proyecto se realizó usando Java, la imagen fue dividida en vecindades de píxeles.", "en": "This project was developed using Java; the image was divided into pixel neighborhoods." },
+        { "es": "Se usó una malla de 3x3 píxeles con sus valores RGB para producir nuevas generaciones.", "en": "A 3x3 pixel grid with its RGB values was used to produce new generations." },
+        { "es": "Uso de algoritmo Nearest Neighbors (K-NN) para la implementación.", "en": "Use of the Nearest Neighbors (K-NN) algorithm for implementation." }
+      ],
+      "tags": ["Java", "Algoritmos genéticos", "Netbeans", "Machine Learning", "Nearest Neighbors", "Procesamiento de imágenes", "Visión por computadora"],
+      "img": "images/Algoritmos.jpg",
+      "url_repo": "https://github.com/SantiagoRPinedo/AlgoritmoGeneticoDeMejoraDeLuz"
+    },
+    {
+      "id": "proj-5",
+      "titulo": { "es": "EDA Videojuego", "en": "Video Game EDA" },
+      "resumen": { "es": "EDA de partidas y estadísticas de jugadores de Brawl Stars.", "en": "EDA of matches and player statistics for Brawl Stars." },
+      "descripcion_completa": [
+        { "es": "Proceso de ETL realizado con Pandas y Numpy.", "en": "ETL process carried out with Pandas and Numpy." },
+        { "es": "Creación de data sets limpios usando Python, uso de técnicas como One Hot encoding.", "en": "Creation of clean datasets using Python, applying techniques like One Hot Encoding." },
+        { "es": "Matplotlib, Seaborn y Oracle Analytics para visualización de datos.", "en": "Matplotlib, Seaborn, and Oracle Analytics for data visualization." },
+        { "es": "Análisis de modos de juego más populares, personajes y cosméticos dentro del juego.", "en": "Analysis of the most popular game modes, characters, and in-game cosmetics." },
+        { "es": "Determinar posibles oportunidades de mejora para tener eventos más rentables.", "en": "Identifying potential improvement opportunities for more profitable events." }
+      ],
+      "tags": ["Python", "EDA", "Matplotlib", "Oracle Analytics", "Seaborn", "Python Notebook"],
+      "img": "images/EDA.jpg",
+      "url_repo": "https://github.com/SantiagoRPinedo/BrawlstarsEDA"
+    },
+    {
+      "id": "proj-6",
+      "titulo": { "es": "SCRUD Dulcería", "en": "Candy Store SCRUD" },
+      "resumen": { "es": "Sistema de gestión de datos para una dulcería.", "en": "Data management system for a candy store." },
+      "descripcion_completa": [
+        { "es": "Creación de base de datos con Oracle XE para gestionar los datos de una dulcería.", "en": "Database creation with Oracle XE to manage candy store data." },
+        { "es": "Uso de funciones Select, Create, Read, Update y Delete en SQL.", "en": "Use of Select, Create, Read, Update, and Delete functions in SQL." },
+        { "es": "Implementación de triggers en bases de datos para gestión de eventos durante una venta, pago de deudas o actualización de datos.", "en": "Implementation of database triggers to manage events during a sale, debt payment, or data updates." },
+        { "es": "Creación de interfaz de usuario para fácil uso de la base de datos.", "en": "Creation of a user-friendly interface for database use." }
+      ],
+      "tags": ["Python", "Flask", "OracleXE", "SQL", "PLSQL", "CSS", "HTML5", "Bootstrap"],
+      "img": "images/candy.jpg",
+      "url_repo": "https://github.com/SantiagoRPinedo/Dulceria"
+    },
+    {
+      "id": "proj-7",
+      "titulo": { "es": "AgeTube", "en": "AgeTube" },
+      "resumen": { "es": "Red social con clasificación de contenido por edad.", "en": "Social network with age-based content classification." },
+      "descripcion_completa": [
+        { "es": "Diseño y desarrollo de un MVP de una red social con clasificación de contenido por edad.", "en": "Design and development of an MVP for a social network with age-based content classification." },
+        { "es": "Uso de reconocimiento facial para determinar edad de usuarios y clasificar el contenido.", "en": "Use of facial recognition to determine user age and classify content." },
+        { "es": "Implementación con Python y Flask.", "en": "Implementation with Python and Flask." },
+        { "es": "Implementación de base de datos para gestión y almacenamiento de posts, usuarios y más.", "en": "Implementation of a database for managing and storing posts, users, and more." },
+        { "es": "Se reforzó la seguridad de la app mediante un sistema de factor doble de autenticación.", "en": "App security was reinforced with a two-factor authentication system." },
+        { "es": "Encriptación de datos con tablas HASH.", "en": "Data encryption using HASH tables." }
+      ],
+      "tags": ["Python", "Flask", "FaceIoApi", "SQL", "SQLite", "Heroku", "Bases de datos", "Hash Tables", "Redes sociales", "Diseño Web", "Visión por computadora"],
+      "img": "images/face.jpg",
+      "url_repo": "https://github.com/SantiagoRPinedo/AgeTube"
+    },
+    {
+      "id": "proj-8",
+      "titulo": { "es": "Paint 2D", "en": "Paint 2D" },
+      "resumen": { "es": "App estilo Paint 2D.", "en": "Paint 2D style App." },
+      "descripcion_completa": [
+        { "es": "Creación de una APP estilo Paint 2D con Java.", "en": "Creation of a Paint 2D style app with Java." },
+        { "es": "Manejo de librería Java2D para creación de la app.", "en": "Use of the Java2D library for app creation." },
+        { "es": "Uso de IDE Netbeans para desarrollo de proyecto.", "en": "Use of Netbeans IDE for project development." },
+        { "es": "En este proyecto se manejaron transformación, rotaciones, creaciones de objetos 2D con java.", "en": "This project involved handling transformations, rotations, and creation of 2D objects with Java." },
+        { "es": "Diseño e implementación de interfaz imitando la interfaz del Paint Clásico.", "en": "Interface design and implementation mimicking the classic Paint interface." }
+      ],
+      "tags": ["Java 8", "NetBeans", "2D", "Manejo de imágenes"],
+      "img": "images/paint.jpg",
+      "url_repo": "https://github.com/SantiagoRPinedo/Paint2D"
+    }
+  ],
+  "experiencia": [
+    {
+      "id": "exp-1",
+      "titulo": { "es": "Desarrollo de Software - Inteligencia Artificial", "en": "Software Development - Artificial Intelligence" },
+      "empresa": "Estrateg-IA - Ford Motor Company",
+      "fecha": "Abril 2024 - Presente",
+      "resumen": { "es": "Desarrollo de soluciones para automatización de pruebas de software, incluyendo visión por computadora y procesamiento de texto.", "en": "Development of solutions for software test automation, including computer vision and text processing." },
+      "descripcion_completa": [
+        { "es": "Implementación de OpenCV para detección de imágenes e iconos.", "en": "Implementation of OpenCV for image and icon detection." },
+        { "es": "Uso de OCR para procesamiento de texto en imágenes.", "en": "Use of OCR for text processing in images." },
+        { "es": "Creación de scripts para automatizar interacción con pantallas automotrices.", "en": "Creation of scripts to automate interaction with automotive screens." },
+        { "es": "Detección y reporte de bugs en el software.", "en": "Detection and reporting of software bugs." },
+        { "es": "Testing bajo metodología ISTQB.", "en": "Testing under ISTQB methodology." },
+        { "es": "Manejo de actividades en Jira, atención y reporte realizado en Inglés con equipos internacionales.", "en": "Management of activities in Jira, support and reporting conducted in English with international teams." }
+      ],
+      "tags": ["Inteligencia Artificial", "Automatización", "OpenCV", "Squish", "Slash Framework", "Protocolo CAN", "Python", "Comunicación en Ingles", "Git Hub", "Jira", "Confluence"],
+      "img": "images/proyecto1.png"
+    },
+    {
+      "id": "exp-2",
+      "titulo": { "es": "Líder de Equipo en Análisis y Diseño de Software", "en": "Team Lead in Software Analysis and Design" },
+      "empresa": "Exhos Technology",
+      "fecha": "Julio 2023 - Abril 2024",
+      "resumen": { "es": "Liderazgo en el análisis de requerimientos, diseño técnico y coordinación de equipos de desarrollo.", "en": "Leadership in requirements analysis, technical design, and development team coordination." },
+      "descripcion_completa": [
+        { "es": "Análisis de requerimientos y diseño técnico.", "en": "Requirements analysis and technical design." },
+        { "es": "Prototipado en bajo nivel con Figma.", "en": "Low-level prototyping with Figma." },
+        { "es": "Flujos de alto nivel interactivos con Figma.", "en": "Interactive high-level flows with Figma." },
+        { "es": "Realización de pseudocódigo para flujos realizados.", "en": "Creation of pseudocode for implemented flows." },
+        { "es": "Delegación de actividades.", "en": "Delegation of activities." },
+        { "es": "Reuniones uno a uno con cliente para análisis de mejoras e iteración sobre diseños.", "en": "One-on-one meetings with clients to analyze improvements and iterate on designs." }
+      ],
+      "tags": ["Análisis de Software", "Diseño de Software", "Liderazgo", "Figma", "Jira", "Notion", "Confluence", "Programación"],
+      "img": "images/Paradero.png"
+    },
+    {
+      "id": "exp-3",
+      "titulo": { "es": "Instructor de Python y Machine Learning", "en": "Python and Machine Learning Instructor" },
+      "empresa": "SuperProf",
+      "fecha": "Octubre 2023 - Octubre 2024",
+      "resumen": { "es": "Diseño y enseñanza de conceptos de IA, incluyendo redes neuronales, PNL, clasificación de imágenes, Análisis de datos, A/B testing, etc.", "en": "Design and teaching of AI concepts, including neural networks, NLP, image classification, data analysis, A/B testing, etc." },
+      "descripcion_completa": [
+        { "es": "Planeación de clases y asesoría en procesamiento de datos.", "en": "Class planning and advisory in data processing." },
+        { "es": "Programación en Python con Notebooks (Google Colab, Jupyter).", "en": "Programming in Python with Notebooks (Google Colab, Jupyter)." }
+      ],
+      "tags": ["Python", "Machine Learning", "Deep Learning", "NLP", "Docencia", "Redes Neuronales", "A/B testing", "Notebooks", "Oracle Analytics", "Looker Studio", "SQL"],
+      "img": "images/proyecto3.png"
+    }
+  ],
+  "contacto": {
+    "email": "pollukenpinedo@gmail.com",
+    "telefono": "5638585480",
+    "linkedin_url": "https://www.linkedin.com/in/santiago-ramon-pinedo-pe%C3%B1a-150788258/",
+    "github_url": "https://github.com/SantiagoRPinedo?tab=repositories"
+  },
+  "ui_text": {
+    "hero.download_cv": { "es": "Descargar CV", "en": "Download CV" },
+    "nav.inicio": { "es": "Inicio", "en": "Home" },
+    "nav.proyectos": { "es": "Proyectos", "en": "Projects" },
+    "nav.experiencia": { "es": "Experiencia", "en": "Experience" },
+    "nav.contacto": { "es": "Contacto", "en": "Contact" },
+    "projects.title": { "es": "Proyectos Personales", "en": "Personal Projects" },
+    "experience.title": { "es": "Experiencia Laboral", "en": "Work Experience" },
+    "contact.title": { "es": "Contacto", "en": "Contact" },
+    "modal.technologies": { "es": "Tecnologías y Habilidades:", "en": "Technologies and Skills:" },
+    "modal.achievements": { "es": "Logros y Responsabilidades:", "en": "Achievements and Responsibilities:" },
+    "modal.repo_button": { "es": "Ver Repositorio", "en": "View Repository" }
+  }
+}

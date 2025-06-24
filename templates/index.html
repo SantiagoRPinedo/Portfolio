@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section id="inicio">
+    <div class="section-container hero-main-content">
+        <div class="hero-layout">
+            <div class="hero-text fade-in-element">
+                <h1 data-key="perfil.titulo">{{ perfil.titulo.es }} <span>👋</span></h1>
+                <h2 data-key="perfil.nombre">{{ perfil.nombre.es }}</h2>
+                <p data-key="perfil.subtitulo">{{ perfil.subtitulo.es }}</p>
+                <a href="{{ url_for('static', filename='pdf/CV_Santiago_Pinedo.pdf') }}" class="btn-primary" download data-key="ui_text.hero.download_cv">{{ ui_text.hero.download_cv.es }}</a>
+            </div>
+            <div class="hero-image fade-in-element">
+                <img src="{{ url_for('static', filename=perfil.imagen_perfil) }}" alt="Avatar de Santiago Pinedo" class="profile-pic">
+            </div>
+        </div>
+    </div>
+    
+    <div class="skills-belt-container" aria-hidden="true">
+        <div class="skills-scroller">
+            <div class="skills-track skills-track--left">
+                <ul class="skills-list">
+                    {% for habilidad in habilidades %}
+                        <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
+                    {% endfor %}
+                </ul>
+                <ul class="skills-list">
+                    {% for habilidad in habilidades %}
+                        <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="skills-track skills-track--right">
+                <ul class="skills-list">
+                    {% for habilidad in habilidades|reverse %}
+                        <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
+                    {% endfor %}
+                </ul>
+                <ul class="skills-list">
+                    {% for habilidad in habilidades|reverse %}
+                        <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="proyectos-personales">
+    <div class="section-container">
+        <h2 class="section-title fade-in-element" data-key="ui_text.projects.title">{{ ui_text.projects.title.es }}</h2>
+        <div class="gallery-grid">
+            {% for proyecto in proyectos %}
+            <div class="proyecto-cuadro fade-in-element" data-modal-id="{{ proyecto.id }}">
+                <img src="{{ url_for('static', filename=proyecto.img) }}" alt="{{ proyecto.titulo.es }}">
+                <div class="proyecto-overlay">
+                    <h3 data-key="proyectos_personales.{{ loop.index0 }}.titulo">{{ proyecto.titulo.es }}</h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="experiencia">
+    <div class="section-container">
+        <h2 class="section-title fade-in-element" data-key="ui_text.experience.title">{{ ui_text.experience.title.es }}</h2>
+        <div class="experiencia-container">
+            {% for exp in experiencia %}
+            <div class="experiencia-card fade-in-element" data-modal-id="{{ exp.id }}">
+                <h3 data-key="experiencia.{{ loop.index0 }}.titulo">{{ exp.titulo.es }}</h3>
+                <p class="company">{{ exp.empresa }} ({{ exp.fecha }})</p>
+                <p data-key="experiencia.{{ loop.index0 }}.resumen">{{ exp.resumen.es }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<footer id="contacto">
+    <div class="section-container fade-in-element">
+        <h2 data-key="ui_text.contact.title">{{ ui_text.contact.title.es }}</h2>
+        <p data-key="ui_text.contact.intro">Si mi perfil te parece interesante, no dudes en contactarme.</p>
+        <div class="contact-info">
+            <a href="mailto:{{ contacto.email }}" class="contact-link"><i class="fas fa-envelope"></i> {{ contacto.email }}</a>
+            <a href="https://wa.me/{{ contacto.telefono }}" class="contact-link" target="_blank"><i class="fab fa-whatsapp"></i> {{ contacto.telefono }}</a>
+            <a href="{{ contacto.linkedin_url }}" class="contact-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="{{ contacto.github_url }}" class="contact-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+        <p class="copyright">&copy; {{ "now"|date("Y") }} {{ perfil.nombre.es }}</p>
+    </div>
+</footer>
+
+{% for proyecto in proyectos %}
+<div id="modal-{{ proyecto.id }}" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 data-key="proyectos_personales.{{ loop.index0 }}.titulo">{{ proyecto.titulo.es }}</h2>
+        <div class="modal-description">
+            <ul>
+                {% for item in proyecto.descripcion_completa %}
+                <li data-key="proyectos_personales.{{ loop.parent.loop.index0 }}.descripcion_completa.{{ loop.index0 }}">{{ item.es }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="modal-tags">
+            <h4 data-key="ui_text.modal.technologies">{{ ui_text.modal.technologies.es }}</h4>
+            <div class="tags-container">
+                {% for tag in proyecto.tags %}<span class="tag">{{tag}}</span>{% endfor %}
+            </div>
+        </div>
+        {% if proyecto.url_repo %}
+        <a href="{{ proyecto.url_repo }}" class="btn-primary" target="_blank" style="margin-top: 1.5rem; display: inline-block;" data-key="ui_text.modal.repo_button">{{ ui_text.modal.repo_button.es }}</a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
+{% for exp in experiencia %}
+<div id="modal-{{ exp.id }}" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 data-key="experiencia.{{ loop.index0 }}.titulo">{{ exp.titulo.es }}</h2>
+        <p class="company" style="text-align: center; margin-top: -1rem; margin-bottom: 2rem;">{{ exp.empresa }} ({{ exp.fecha }})</p>
+        <div class="modal-description">
+            <h4 data-key="ui_text.modal.achievements">{{ ui_text.modal.achievements.es }}</h4>
+            <ul>
+                {% for item in exp.descripcion_completa %}
+                <li data-key="experiencia.{{ loop.parent.loop.index0 }}.descripcion_completa.{{ loop.index0 }}">{{ item.es }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="modal-tags">
+            <h4 data-key="ui_text.modal.technologies">{{ ui_text.modal.technologies.es }}</h4>
+            <div class="tags-container">
+                {% for tag in exp.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
