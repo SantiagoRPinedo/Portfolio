@@ -1,8 +1,8 @@
-#  पोर्टफोलियो Profesional de Santiago Pinedo 🚀
+#  Portafolio Profesional de Santiago Pinedo 🚀
 
 ¡Bienvenido a mi portafolio! Este es un sitio web de una sola página, dinámico y totalmente responsivo, construido con Flask y Python para mostrar mis proyectos, habilidades y experiencia como Ingeniero en Computación.
 
-![Vista Previa del Portafolio](https://i.imgur.com/a3dffb.jpg)
+![Vista Previa del Portafolio](images/Preview.png)
 
 ---
 
@@ -66,7 +66,6 @@ Para clonar y correr este proyecto en tu máquina local, sigue estos pasos:
     ```bash
     pip install -r requirements.txt
     ```
-    *(Nota: Asegúrate de tener un archivo `requirements.txt` creado con `pip freeze > requirements.txt`)*
 
 6.  **Ejecuta la aplicación:**
     ```bash
