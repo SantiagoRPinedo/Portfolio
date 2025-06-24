@@ -84,7 +84,7 @@ Para clonar y correr este proyecto en tu máquina local, sigue estos pasos:
 
 La organización del código sigue las mejores prácticas para una aplicación Flask, separando la lógica, las plantillas y los archivos estáticos.
 
-
+```bash
 mi_portafolio/
 ├── .gitignore
 ├── app.py
@@ -104,7 +104,7 @@ mi_portafolio/
 └── templates/
 ├── index.html
 └── layout.html
-
+```bash
 ---
 
 Hecho con ❤️ por Santiago Pinedo.
