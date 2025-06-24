@@ -1,5 +1,5 @@
 import json
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify  # <-- Importa jsonify
 
 app = Flask(__name__)
 
@@ -31,6 +31,13 @@ def home():
                            contacto=datos.get('contacto', {}),
                            ui_text=datos.get('ui_text', {})  # <-- ¡LA LÍNEA QUE FALTABA!
                            )
+
+# --- NUEVO ENDPOINT DE API ---
+@app.route('/api/data')
+def get_portfolio_data():
+    """Esta ruta sirve el contenido de data.json como una respuesta de API."""
+    datos = cargar_datos_portafolio()
+    return jsonify(datos)
 
 if __name__ == '__main__':
     app.run(debug=True)

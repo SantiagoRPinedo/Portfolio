@@ -9,41 +9,42 @@
                 <h1 data-key="perfil.titulo">{{ perfil.titulo.es }} <span>👋</span></h1>
                 <h2 data-key="perfil.nombre">{{ perfil.nombre.es }}</h2>
                 <p data-key="perfil.subtitulo">{{ perfil.subtitulo.es }}</p>
-                <a href="{{ url_for('static', filename='pdf/CV_Santiago_Pinedo.pdf') }}" class="btn-primary" download data-key="ui_text.hero.download_cv">{{ ui_text.hero.download_cv.es }}</a>
+                <a href="{{ url_for('static', filename='pdf/CV_Santiago_Pinedo.pdf') }}" class="btn-primary" download data-key="hero.download_cv">Descargar CV</a>
             </div>
             <div class="hero-image fade-in-element">
                 <img src="{{ url_for('static', filename=perfil.imagen_perfil) }}" alt="Avatar de Santiago Pinedo" class="profile-pic">
             </div>
         </div>
-    </div>
-    
-    <div class="skills-belt-container" aria-hidden="true">
-        <div class="skills-scroller">
-            <div class="skills-track skills-track--left">
-                <ul class="skills-list">
-                    {% for habilidad in habilidades %}
-                        <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
-                    {% endfor %}
-                </ul>
-                <ul class="skills-list">
-                    {% for habilidad in habilidades %}
-                        <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="skills-track skills-track--right">
-                <ul class="skills-list">
-                    {% for habilidad in habilidades|reverse %}
-                        <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
-                    {% endfor %}
-                </ul>
-                <ul class="skills-list">
-                    {% for habilidad in habilidades|reverse %}
-                        <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
-                    {% endfor %}
-                </ul>
+
+        <div class="skills-belt-container" aria-hidden="true">
+            <div class="skills-scroller">
+                <div class="skills-track skills-track--left">
+                    <ul class="skills-list">
+                        {% for habilidad in habilidades %}
+                            <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
+                        {% endfor %}
+                    </ul>
+                    <ul class="skills-list">
+                        {% for habilidad in habilidades %}
+                            <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="skills-track skills-track--right">
+                    <ul class="skills-list">
+                        {% for habilidad in habilidades|reverse %}
+                            <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
+                        {% endfor %}
+                    </ul>
+                    <ul class="skills-list">
+                        {% for habilidad in habilidades|reverse %}
+                            <li><img src="{{ url_for('static', filename=habilidad.icono) }}" alt="{{ habilidad.nombre }}"></li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -99,8 +100,9 @@
         <h2 data-key="proyectos_personales.{{ loop.index0 }}.titulo">{{ proyecto.titulo.es }}</h2>
         <div class="modal-description">
             <ul>
+                {% set proyecto_index = loop.index0 %}
                 {% for item in proyecto.descripcion_completa %}
-                <li data-key="proyectos_personales.{{ loop.parent.loop.index0 }}.descripcion_completa.{{ loop.index0 }}">{{ item.es }}</li>
+                <li data-key="proyectos_personales.{{ proyecto_index }}.descripcion_completa.{{ loop.index0 }}">{{ item.es }}</li>
                 {% endfor %}
             </ul>
         </div>
@@ -126,8 +128,9 @@
         <div class="modal-description">
             <h4 data-key="ui_text.modal.achievements">{{ ui_text.modal.achievements.es }}</h4>
             <ul>
+                {% set exp_index = loop.index0 %}
                 {% for item in exp.descripcion_completa %}
-                <li data-key="experiencia.{{ loop.parent.loop.index0 }}.descripcion_completa.{{ loop.index0 }}">{{ item.es }}</li>
+                <li data-key="experiencia.{{ exp_index }}.descripcion_completa.{{ loop.index0 }}">{{ item.es }}</li>
                 {% endfor %}
             </ul>
         </div>

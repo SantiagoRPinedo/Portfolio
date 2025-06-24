@@ -209,17 +209,29 @@
     "linkedin_url": "https://www.linkedin.com/in/santiago-ramon-pinedo-pe%C3%B1a-150788258/",
     "github_url": "https://github.com/SantiagoRPinedo?tab=repositories"
   },
-  "ui_text": {
-    "hero.download_cv": { "es": "Descargar CV", "en": "Download CV" },
-    "nav.inicio": { "es": "Inicio", "en": "Home" },
-    "nav.proyectos": { "es": "Proyectos", "en": "Projects" },
-    "nav.experiencia": { "es": "Experiencia", "en": "Experience" },
-    "nav.contacto": { "es": "Contacto", "en": "Contact" },
-    "projects.title": { "es": "Proyectos Personales", "en": "Personal Projects" },
-    "experience.title": { "es": "Experiencia Laboral", "en": "Work Experience" },
-    "contact.title": { "es": "Contacto", "en": "Contact" },
-    "modal.technologies": { "es": "Tecnologías y Habilidades:", "en": "Technologies and Skills:" },
-    "modal.achievements": { "es": "Logros y Responsabilidades:", "en": "Achievements and Responsibilities:" },
-    "modal.repo_button": { "es": "Ver Repositorio", "en": "View Repository" }
-  }
+"ui_text": {
+    "nav": {
+      "inicio": { "es": "Inicio", "en": "Home" },
+      "proyectos": { "es": "Proyectos", "en": "Projects" },
+      "experiencia": { "es": "Experiencia", "en": "Experience" },
+      "contacto": { "es": "Contacto", "en": "Contact" }
+    },
+    "hero": {
+      "download_cv": { "es": "Descargar CV", "en": "Download CV" }
+    },
+    "projects": {
+      "title": { "es": "Proyectos Personales", "en": "Personal Projects" }
+    },
+    "experience": {
+      "title": { "es": "Experiencia Laboral", "en": "Work Experience" }
+    },
+    "contact": {
+      "title": { "es": "Contacto", "en": "Contact" }
+    },
+    "modal": {
+      "technologies": { "es": "Tecnologías y Habilidades:", "en": "Technologies and Skills:" },
+      "achievements": { "es": "Logros y Responsabilidades:", "en": "Achievements and Responsibilities:" },
+      "repo_button": { "es": "Ver Repositorio", "en": "View Repository" }
+    }
+}
 }

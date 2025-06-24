@@ -1,13 +1,12 @@
 /**
  * Portafolio Scripts
  * Autor: Santiago Pinedo
- * Descripción: Maneja toda la interactividad del portafolio,
- * incluyendo modales, navegación móvil y animaciones de scroll.
+ * Descripción: Maneja toda la interactividad del portafolio.
  */
 document.addEventListener('DOMContentLoaded', function() {
 
     /**
-     * Inicializa toda la lógica de la aplicación una vez que el DOM está cargado.
+     * Función principal que inicializa todos los módulos.
      */
     function init() {
         initModalLogic();
@@ -17,17 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /**
-     * Configura los eventos para abrir y cerrar los modales de los proyectos.
+     * Configura la lógica para los modales de proyectos y experiencia.
      */
     function initModalLogic() {
-        // Seleccionamos TODOS los elementos que pueden activar un modal.
         const modalTriggers = document.querySelectorAll('.proyecto-cuadro, .experiencia-card');
         const closeButtons = document.querySelectorAll('.close-button');
 
-        // Abrir modal al hacer clic en un elemento activador
         modalTriggers.forEach(card => {
             card.addEventListener('click', function() {
-                // Usamos el mismo 'data-modal-id' que definimos en el HTML
                 const modalId = this.dataset.modalId;
                 const modal = document.getElementById('modal-' + modalId);
                 if (modal) {
@@ -38,36 +34,18 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // El resto de la lógica de cierre no necesita cambios y funcionará para todos los modales.
-        closeButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                closeModal(this.closest('.modal'));
-            });
-        });
-
-        window.addEventListener('click', function(event) {
-            if (event.target.classList.contains('modal')) {
-                closeModal(event.target);
-            }
-        });
-        
-        window.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                const activeModal = document.querySelector('.modal.modal-active');
-                if (activeModal) {
-                    closeModal(activeModal);
-                }
-            }
-        });
-
-        function closeModal(modal) {
+        const closeModal = (modal) => {
             if (!modal) return;
             modal.classList.remove('modal-active');
             setTimeout(() => {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }, 300);
-        }
+        };
+
+        closeButtons.forEach(button => button.addEventListener('click', () => closeModal(button.closest('.modal'))));
+        window.addEventListener('click', event => event.target.classList.contains('modal') && closeModal(event.target));
+        window.addEventListener('keydown', event => event.key === 'Escape' && closeModal(document.querySelector('.modal.modal-active')));
     }
 
     /**
@@ -76,25 +54,20 @@ document.addEventListener('DOMContentLoaded', function() {
     function initMobileNav() {
         const menuToggle = document.getElementById('menu-toggle');
         const mainNav = document.getElementById('main-nav');
+        if (!menuToggle || !mainNav) return;
+
         const navLinks = mainNav.querySelectorAll('a.nav-link');
 
-        if (menuToggle && mainNav) {
-            menuToggle.addEventListener('click', function() {
-                mainNav.classList.toggle('nav-open');
-            });
-        }
+        menuToggle.addEventListener('click', () => mainNav.classList.toggle('nav-open'));
 
-        // Cierra el menú móvil al hacer clic en un enlace y hace scroll suave
         navLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevenimos el salto brusco del ancla
-                const targetId = this.getAttribute('href');
+            link.addEventListener('click', (event) => {
+                const targetId = link.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-
                 if (targetElement) {
+                    event.preventDefault();
                     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-
                 if (mainNav.classList.contains('nav-open')) {
                     mainNav.classList.remove('nav-open');
                 }
@@ -103,27 +76,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /**
-     * Configura la animación de "aparecer" para los elementos al hacer scroll.
-     * Utiliza la API Intersection Observer para mayor eficiencia.
+     * Configura la animación de "aparecer" al hacer scroll.
      */
     function initScrollAnimations() {
         const animatedElements = document.querySelectorAll('.fade-in-element');
-
-        if ('IntersectionObserver' in window) {
+        if ('IntersectionObserver' in window && animatedElements.length > 0) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Dejar de observar una vez animado
+                        observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.1 // Activar cuando el 10% del elemento sea visible
-            });
-
-            animatedElements.forEach(element => {
-                observer.observe(element);
-            });
+            }, { threshold: 0.1 });
+            animatedElements.forEach(element => observer.observe(element));
         }
     }
 
@@ -134,45 +100,45 @@ document.addEventListener('DOMContentLoaded', function() {
         const langButtons = document.querySelectorAll('.lang-btn');
         let translations = {};
 
-        // Cargar el archivo JSON con las traducciones
-        fetch('/static/data.json')
-            .then(response => response.json())
+        // CORRECCIÓN CLAVE: Usamos una ruta estática que el navegador entiende.
+        fetch('/api/data')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 translations = data;
             })
-            .catch(error => console.error('Error al cargar las traducciones:', error));
+            .catch(error => console.error('Error al cargar el archivo de traducciones (data.json):', error));
 
         langButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const lang = button.dataset.lang;
-                
-                // Actualizar clase activa del botón
+                if (!translations) return; // No hacer nada si las traducciones no han cargado
+
+                document.documentElement.lang = lang;
                 document.querySelector('.lang-btn.active').classList.remove('active');
                 button.classList.add('active');
-
-                // Traducir todos los elementos con data-key
                 translateElements(lang);
             });
         });
 
-        function translateElements(lang) {
-            const elementsToTranslate = document.querySelectorAll('[data-key]');
-            
-            elementsToTranslate.forEach(element => {
-                const key = element.dataset.key; // ej: "perfil.titulo"
-                const keys = key.split('.'); // ["perfil", "titulo"]
+        const translateElements = (lang) => {
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.dataset.key;
+                const keys = key.split('.');
                 
-                // Navega el objeto JSON para encontrar el texto
-                let textObject = keys.reduce((obj, k) => (obj && obj[k] !== 'undefined') ? obj[k] : undefined, translations);
+                const text = keys.reduce((obj, k) => (obj && obj[k] !== undefined) ? obj[k] : null, translations);
                 
-                if (textObject && textObject[lang]) {
-                    element.textContent = textObject[lang];
+                if (text && text[lang] !== undefined) {
+                    element.textContent = text[lang];
                 }
             });
-        }
+        };
     }
 
-    // Llama a la función principal para iniciar todo
+    // Iniciar todo
     init();
-
 });
