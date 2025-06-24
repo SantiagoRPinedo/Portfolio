@@ -2,7 +2,7 @@
 
 ¡Bienvenido a mi portafolio! Este es un sitio web de una sola página, dinámico y totalmente responsivo, construido con Flask y Python para mostrar mis proyectos, habilidades y experiencia como Ingeniero en Computación.
 
-![Vista Previa del Portafolio](![alt text](image.png))
+![Vista Previa del Portafolio](image.png)
 
 ---
 
