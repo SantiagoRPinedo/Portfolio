@@ -2,7 +2,7 @@
 
 ¡Bienvenido a mi portafolio! Este es un sitio web de una sola página, dinámico y totalmente responsivo, construido con Flask y Python para mostrar mis proyectos, habilidades y experiencia como Ingeniero en Computación.
 
-![Vista Previa del Portafolio](images/Preview.png)
+![Vista Previa del Portafolio](![alt text](image.png))
 
 ---
 
@@ -82,21 +82,28 @@ Para clonar y correr este proyecto en tu máquina local, sigue estos pasos:
 
 ## 📁 Estructura del Proyecto
 
+La organización del código sigue las mejores prácticas para una aplicación Flask, separando la lógica, las plantillas y los archivos estáticos.
+
+
 mi_portafolio/
 ├── .gitignore
-├── app.py              # Aplicación Flask principal y endpoint de API
-├── data.json           # Contenido bilingüe del portafolio
-├── requirements.txt    # Dependencias del proyecto
-├── static/
+├── app.py
+├── data.json
+├── requirements.txt
+└── static/
 │   ├── css/
 │   │   └── style.css
-│   ├── icons/          # Iconos SVG de habilidades
-│   ├── images/         # Imágenes de perfil y proyectos
+│   ├── icons/
+│   │   ├── python.svg
+│   │   └── ... (más iconos)
+│   ├── images/
+│   │   ├── profile5.jpg
+│   │   └── ... (más imágenes)
 │   └── js/
 │       └── main.js
 └── templates/
-├── index.html      # Plantilla principal del contenido
-└── layout.html     # Plantilla base con el header y estructura
+├── index.html
+└── layout.html
 
 ---
 
