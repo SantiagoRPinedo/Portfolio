@@ -9,7 +9,7 @@
                 <h1 data-key="perfil.titulo">{{ perfil.titulo.es }} <span>👋</span></h1>
                 <h2 data-key="perfil.nombre">{{ perfil.nombre.es }}</h2>
                 <p data-key="perfil.subtitulo">{{ perfil.subtitulo.es }}</p>
-                <a href="{{ url_for('static', filename='pdf/CV_Santiago_Pinedo.pdf') }}" class="btn-primary" download data-key="hero.download_cv">Descargar CV</a>
+                <a href="{{ url_for('static', filename='pdf/CV_Santiago_Pinedo.pdf') }}" class="btn-primary" download data-key="ui_text.hero.download_cv">{{ ui_text.hero.download_cv.es }}</a>
             </div>
             <div class="hero-image fade-in-element">
                 <img src="{{ url_for('static', filename=perfil.imagen_perfil) }}" alt="Avatar de Santiago Pinedo" class="profile-pic">

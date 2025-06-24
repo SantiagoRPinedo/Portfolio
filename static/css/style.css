@@ -675,6 +675,7 @@ footer#contacto {
     display: flex;
     flex-direction: column;
     gap: 1rem; /* Espacio entre las dos filas de iconos */
+    overflow: hidden;
 }
 
 .skills-track {
