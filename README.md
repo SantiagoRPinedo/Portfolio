@@ -104,7 +104,8 @@ mi_portafolio/
 └── templates/
 ├── index.html
 └── layout.html
-```bash
+```
+
 ---
 
 Hecho con ❤️ por Santiago Pinedo.

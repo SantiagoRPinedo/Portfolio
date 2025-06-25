@@ -12,7 +12,7 @@
       "es": "Soy un completo apasionado por el análisis de datos, inteligencia artificial, diseño y creación de videojuegos. Mi actividad preferida es viajar.",
       "en": "I am passionate about data analysis, artificial intelligence, design, and video game creation. My favorite activity is traveling."
     },
-    "imagen_perfil": "images/profile5.jpg"
+    "imagen_perfil": "images/Profile.jpg"
   },
   "habilidades": [
     { "nombre": "Python", "icono": "icons/python.svg" },
