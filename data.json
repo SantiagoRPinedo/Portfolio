@@ -156,10 +156,47 @@
   ],
   "experiencia": [
     {
+    "id": "exp-0",
+    "titulo": {
+      "es": "Líder de Diseño (Game Design & UX/UI)",
+      "en": "Design Lead (Game Design & UX/UI)"
+    },
+    "empresa": "Nebula Glitch Estudios",
+    "fecha": "Junio 2024 - Presente",
+    "resumen": {
+      "es": "Liderazgo del equipo de diseño para garantizar la calidad y coherencia en UX/UI y Game Design, gestionando el flujo de trabajo con metodologías Ágiles.",
+      "en": "Leading the design team to ensure quality and consistency in UX/UI and Game Design, managing the workflow with Agile methodologies."
+    },
+    "descripcion_completa": [
+      {
+        "es": "Lideré y supervisé a un equipo de diseño, delegando tareas y proporcionando retroalimentación constructiva para asegurar la calidad y coherencia del diseño UX/UI y de juego.",
+        "en": "Led and supervised a design team, delegating tasks and providing constructive feedback to ensure the quality and consistency of the UX/UI and game design."
+      },
+      {
+        "es": "Autoría y mantenimiento de Documentos de Diseño de Juego (GDD), detallando mecánicas de juego, diseño de niveles, narrativa y diseño contextual de personajes.",
+        "en": "Authored and maintained Game Design Documents (GDDs), detailing game mechanics, level design, narrative, and contextual character design."
+      },
+      {
+        "es": "Diseñé y definí flujos de usuario (user flows) y la arquitectura de la información para las interfaces del juego, creando prototipos de baja y alta fidelidad en Figma.",
+        "en": "Designed and defined user flows and information architecture for the game's interfaces, creating low and high-fidelity prototypes in Figma."
+      },
+      {
+        "es": "Colaboré estrechamente con el equipo de desarrollo para traducir los diseños de alto nivel en flujos de trabajo técnicos y funcionales, asegurando una implementación fiel a la visión del producto.",
+        "en": "Collaborated closely with the development team to translate high-level designs into technical and functional workflows, ensuring a faithful implementation of the product vision."
+      },
+      {
+        "es": "Gestioné el backlog de diseño y el flujo de trabajo del equipo utilizando Jira y ClickUp bajo un marco de trabajo Ágil, participando activamente en sprints, dailies y retrospectivas.",
+        "en": "Managed the design backlog and team workflow using Jira and ClickUp under an Agile framework, actively participating in sprints, dailies, and retrospectives."
+      }
+    ],
+    "tags": ["Liderazgo de Equipo", "Game Design", "UX/UI Design", "GDD", "Figma", "Prototyping", "Metodologías Ágiles", "Jira", "ClickUp"],
+    "img": "images/placeholder.png"
+    },
+    {
       "id": "exp-1",
       "titulo": { "es": "Desarrollo de Software - Inteligencia Artificial", "en": "Software Development - Artificial Intelligence" },
       "empresa": "Estrateg-IA - Ford Motor Company",
-      "fecha": "Abril 2024 - Presente",
+      "fecha": "Abril 2024 - Julio 2025",
       "resumen": { "es": "Desarrollo de soluciones para automatización de pruebas de software, incluyendo visión por computadora y procesamiento de texto.", "en": "Development of solutions for software test automation, including computer vision and text processing." },
       "descripcion_completa": [
         { "es": "Implementación de OpenCV para detección de imágenes e iconos.", "en": "Implementation of OpenCV for image and icon detection." },
