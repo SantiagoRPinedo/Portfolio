@@ -25,7 +25,7 @@
       "titulo": { "es": "Data_Stream_breaker", "en": "Data_Stream_breaker" },
       "descripcion": { "es": "Inserta una moneda virtual para jugar.", "en": "Insert a virtual coin to play." },
       "controles_html": { 
-        "es": "<kbd style=\"background: #fff; color: #000; padding: 2px 8px; border-radius: 4px;\">A D</kbd> para moverte y <kbd style=\"background: #fff; color: #000; padding: 2px 8px; border-radius: 4px;\">ESPACIO</kbd> para disparar" 
+        "es": "<kbd style=\"background: #fff; color: #000; padding: 2px 8px; border-radius: 4px;\">A D</kbd> para moverte"
       },
       "thumbnail": "images/arcade/breakout.png",
       "url_juego": "breakout" 

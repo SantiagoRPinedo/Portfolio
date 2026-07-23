@@ -10,55 +10,66 @@ export function initArcadeManager() {
 
     insertCoinBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-        e.preventDefault(); 
-        
-        const arcadeModal = document.getElementById('arcade-modal');
-        const closeBtn = document.querySelector('.close-arcade');
-        const gameId = btn.getAttribute('data-game-id');
-        const controlesData = btn.getAttribute('data-controles'); // Capturamos los controles
+            e.preventDefault(); 
+            
+            // ==========================================
+            // 1. VALIDACIÓN DE DISPOSITIVO MÓVIL
+            // ==========================================
+            const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                alert("👾 ¡ZONA RESTRINGIDA!\n\nEsta zona arcade está diseñada para jugarse con teclado. Por favor, visita esta sección desde una PC para disfrutar la experiencia completa.");
+                return; // Cortamos la ejecución aquí mismo, no se abre el modal.
+            }
+            // ==========================================
 
-        if (!arcadeModal) return;
+            const arcadeModal = document.getElementById('arcade-modal');
+            const closeBtn = document.querySelector('.close-arcade');
+            const gameId = btn.getAttribute('data-game-id');
+            const controlesData = btn.getAttribute('data-controles'); // Capturamos los controles
 
-        // 1. SOLUCIÓN AL FANTASMA: Detener el juego anterior si existe ANTES de hacer nada
-        if (currentGameInstance) {
-            currentGameInstance.stop(); // Esto apaga los event listeners
-            currentGameInstance = null; // Vaciamos la memoria
-        }
+            if (!arcadeModal) return;
 
-        // 2. ACTUALIZAR LOS CONTROLES DINÁMICAMENTE
-        const controlsTextElement = document.getElementById('game-controls-text');
-        if (controlsTextElement && controlesData) {
-            controlsTextElement.innerHTML = `Controles: ${controlesData}`;
-        }
+            // 2. SOLUCIÓN AL FANTASMA: Detener el juego anterior si existe ANTES de hacer nada
+            if (currentGameInstance) {
+                currentGameInstance.stop(); // Esto apaga los event listeners
+                currentGameInstance = null; // Vaciamos la memoria
+            }
 
-        // FORZAMOS TODAS LAS PROPIEDADES DE VISIBILIDAD
-        arcadeModal.style.display = 'flex';
-        arcadeModal.style.visibility = 'visible';
-        arcadeModal.style.opacity = '1';
-        arcadeModal.style.zIndex = '9999'; 
-        
-        // INICIALIZACIÓN DE JUEGOS
-        if (gameId === 'cyber_runner') { 
-            document.getElementById('arcade-game-title').textContent = 'Cyber_Runner.exe';
-            try {
-                currentGameInstance = new CyberRunner();
-                currentGameInstance.start();
-            } catch (error) { console.error("Error:", error); }
-        } 
-        else if (gameId === 'galaxy_shooter') {
-            document.getElementById('arcade-game-title').textContent = 'Galaxy_Shooter.exe';
-            try {
-                currentGameInstance = new GalaxyShooter();
-                currentGameInstance.start();
-            } catch (error) { console.error("Error:", error); }
-        }
-        else if (gameId === 'breakout') {
-            document.getElementById('arcade-game-title').textContent = 'Data_Stream_breaker.exe';
-            try {
-                currentGameInstance = new Breakout();
-                currentGameInstance.start();
-            } catch (error) { console.error("Error:", error); }
-        }  
+            // 3. ACTUALIZAR LOS CONTROLES DINÁMICAMENTE
+            const controlsTextElement = document.getElementById('game-controls-text');
+            if (controlsTextElement && controlesData) {
+                controlsTextElement.innerHTML = `Controles: ${controlesData}`;
+            }
+
+            // FORZAMOS TODAS LAS PROPIEDADES DE VISIBILIDAD
+            arcadeModal.style.display = 'flex';
+            arcadeModal.style.visibility = 'visible';
+            arcadeModal.style.opacity = '1';
+            arcadeModal.style.zIndex = '9999'; 
+            
+            // INICIALIZACIÓN DE JUEGOS
+            if (gameId === 'cyber_runner') { 
+                document.getElementById('arcade-game-title').textContent = 'Cyber_Runner.exe';
+                try {
+                    currentGameInstance = new CyberRunner();
+                    currentGameInstance.start();
+                } catch (error) { console.error("Error:", error); }
+            } 
+            else if (gameId === 'galaxy_shooter') {
+                document.getElementById('arcade-game-title').textContent = 'Galaxy_Shooter.exe';
+                try {
+                    currentGameInstance = new GalaxyShooter();
+                    currentGameInstance.start();
+                } catch (error) { console.error("Error:", error); }
+            }
+            else if (gameId === 'breakout') {
+                document.getElementById('arcade-game-title').textContent = 'Data_Stream_breaker.exe';
+                try {
+                    currentGameInstance = new Breakout();
+                    currentGameInstance.start();
+                } catch (error) { console.error("Error:", error); }
+            }  
 
             const closeGame = () => {
                 arcadeModal.style.display = 'none';

@@ -605,3 +605,20 @@
     padding: 2px 8px;
     border-radius: 4px;
 }
+
+/* ==========================================================================
+   8. COMPORTAMIENTO MÓVIL PARA EL ARCADE
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Selecciona el botón que usas para abrir los juegos (ajusta la clase si es diferente) */
+    .insert-coin-btn {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    
+    .insert-coin-btn::after {
+        content: " (PC Only)";
+        font-size: 0.8em;
+        color: var(--color-primary);
+    }
+}
