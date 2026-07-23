@@ -1,0 +1,63 @@
+{
+  "vlog_estatus": {
+    "cita": {
+      "es": "\"Ingeniero de software de día, desarrollador de videojuegos y nómada de noche.\"",
+      "en": "\"Software engineer by day, game developer and nomad by night.\""
+    },
+    "tags": [
+      { "icono": "🐧", "texto": { "es": "OS: Pop!_OS", "en": "OS: Pop!_OS" } },
+      { "icono": "👾", "texto": { "es": "Vibe: Y2K Cyber", "en": "Vibe: Y2K Cyber" } },
+      { "icono": "🌮", "texto": { "es": "Ubicación: México", "en": "Location: Mexico" } }
+    ]
+  },
+  "vlog_winamp": {
+    "playlist": [
+      "Daft Punk - Discovery",
+      "Gorillaz - Feel Good Inc.",
+      "Linkin Park - Numb",
+      "Blink-182 - All The Small Things",
+      "Eminem - Without Me"
+    ],
+    "estado": { "es": "[Reproduciendo...]", "en": "[Playing...]" },
+    "pausa": { "es": "[Pausado]", "en": "[Paused]" }
+  },
+  "instagram": {
+    "usuario": "@santiago_dev",
+    "url": "https://www.instagram.com/pollukenpenia/?hl=es-la",
+    "mensaje_final": {
+      "es": "¿Quieres ver más de mí...? 😏 Da clic en el botón de Insta arriba",
+      "en": "Want to see more of me...? 😏 Click the Insta button above"
+    },
+"fotos": [
+      { "img": "images/vlog/insta/p1.jpg", "caption": { "es": "Perdido en algun lugar de México ☕ (⋟﹏⋞) ", "en": "Lost somewhere in Mexico ☕ (⋟﹏⋞)" } },
+      { "img": "images/vlog/insta/p2.jpg", "caption": { "es": "A punto de ser sacrificado en un volcán (•﹏•;)", "en": "About to be sacrificed in a volcano (•﹏•;)" } },
+      { "img": "images/vlog/insta/p3.jpg", "caption": { "es": "Probando la verdadera salchicha alemana (╭☞ ͡ ͡°͜ ʖ ͡ ͡°)╭☞", "en": "Trying out some authentic German sausage. (╭☞ ͡ ͡°͜ ʖ ͡ ͡°)╭☞" } },
+      { "img": "images/vlog/insta/p4.jpg", "caption": { "es": "Explorando la playa con Q-ki (っ◕‿◕)っ", "en": "Exploring the beach with Q-ki (っ◕‿◕)っ" } },
+      { "img": "images/vlog/insta/p5.jpg", "caption": { "es": "Disfrutando de una buena ruta en SLP ☕ (꒪▿꒪)", "en": "Enjoying a nice drive in SLP ☕ (꒪▿꒪)" } }
+    ]
+  },
+  "vlog_posts": [
+    {
+      "id": "post-1",
+      "fecha": "12 Jun 2026",
+      "mood": "Aventurero 🌍",
+      "titulo": { "es": "Explorando Pop!_OS y COSMIC", "en": "Exploring Pop!_OS and COSMIC" },
+      "contenido": { 
+        "es": "Hoy decidí migrar mi entorno de desarrollo a Linux. La fluidez de COSMIC es increíble. Además, estoy rediseñando mi portafolio para que parezca una reliquia de los 2000s pero con código moderno. ¡Se vienen cosas grandes!", 
+        "en": "Today I decided to migrate my dev environment to Linux. COSMIC's fluidity is amazing. Also, I'm redesigning my portfolio to look like a 2000s relic but with modern code. Big things coming!" 
+      },
+      "imagen": "images/vlog/posts/linuxpost.png"
+    },
+    {
+      "id": "post-2",
+      "fecha": "12 Jul 2026",
+      "mood": "Motociclista 🏍️",
+      "titulo": { "es": "Explorando Mexico", "en": "Exploring Mexico" },
+      "contenido": { 
+        "es": "Hoy sali en busca de hongos con mi pareja y mi perrita, un paseo muy placentero en moto, fue una aventura en busca de hongos, increible.", 
+        "en": "Today I went out in search of mushrooms with my partner and my little dog, a very pleasant motorcycle ride, it was an adventure in search of mushrooms, incredible." 
+      },
+      "imagen": "images/vlog/posts/RideJulio.jpg"
+    }
+  ]
+}

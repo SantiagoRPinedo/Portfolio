@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio | Santiago Pinedo</title>
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.ico') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/ico" href="{{ url_for('static', filename='images/UI/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/component.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -18,10 +20,15 @@
             </div>
             <nav class="main-nav" id="main-nav">
                 <ul>
-                    <li><a href="#inicio" class="nav-link" data-key="ui_text.nav.inicio">{{ ui_text.nav.inicio.es }}</a></li>
-                    <li><a href="#proyectos-personales" class="nav-link" data-key="ui_text.nav.proyectos">{{ ui_text.nav.proyectos.es }}</a></li>
-                    <li><a href="#experiencia" class="nav-link" data-key="ui_text.nav.experiencia">{{ ui_text.nav.experiencia.es }}</a></li>
-                    <li><a href="#contacto" class="nav-link" data-key="ui_text.nav.contacto">{{ ui_text.nav.contacto.es }}</a></li>
+                    <li><a href="{{ url_for('home') }}#inicio" class="nav-link" data-key="ui_text.nav.inicio">{{ ui_text.nav.inicio.es }}</a></li>
+                    <li><a href="{{ url_for('home') }}#proyectos-personales" class="nav-link" data-key="ui_text.nav.proyectos">{{ ui_text.nav.proyectos.es }}</a></li>
+                    <li><a href="{{ url_for('home') }}#experiencia" class="nav-link" data-key="ui_text.nav.experiencia">{{ ui_text.nav.experiencia.es }}</a></li>
+                    
+                    <li><a href="{{ url_for('arcade') }}" class="nav-link" data-key="ui_text.nav.arcade">Arcade</a></li>
+                    <li><a href="{{ url_for('vlog') }}" class="nav-link" data-key="ui_text.nav.vlog">Vlog</a></li>
+                    <li><a href="{{ url_for('faq') }}" class="nav-link" data-key="ui_text.nav.faq">FAQ</a></li>
+
+                    <li><a href="{{ url_for('home') }}#contacto" class="nav-link" data-key="ui_text.nav.contacto">{{ ui_text.nav.contacto.es }}</a></li>
                     
                     <li class="lang-switcher">
                         <button id="btn-es" class="lang-btn active" data-lang="es">ES</button>
@@ -36,7 +43,7 @@
     <main>
         {% block content %}{% endblock %}
     </main>
-
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

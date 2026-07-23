@@ -1,0 +1,15 @@
+{
+  "q_and_a": [
+    {
+      "pregunta": { "es": "¿Cuál es tu meta principal como desarrollador?", "en": "What is your main goal as a developer?" },
+      "respuesta": { 
+        "es": "Combinar la lógica estricta de la ingeniería con la creatividad sin límites del diseño de videojuegos y la inteligencia artificial.", 
+        "en": "Combining the strict logic of engineering with the limitless creativity of game design and AI." 
+      }
+    },
+    {
+      "pregunta": { "es": "¿Tabs o Espacios?", "en": "Tabs or Spaces?" },
+      "respuesta": { "es": "Tabs. No acepto debate. 👾", "en": "Tabs. I don't accept debate. 👾" }
+    }
+  ]
+}

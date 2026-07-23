@@ -1,0 +1,126 @@
+/* ==========================================================================
+   1. VARIABLES GLOBALES Y TIPOGRAFÍA RETRO
+   ========================================================================== */
+/* Importamos VT323 para ese look de terminal/pixel y Fira Code para lectura */
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Fira+Code:wght@400;700&display=swap');
+
+:root {
+    /* Paleta Y2K / Cyber */
+    --color-bg: #050510;            /* Vacío oscuro */
+    --color-primary: #ff00ff;       /* Magenta intenso Y2K */
+    --color-secondary: #00ffff;     /* Cyan eléctrico */
+    --color-text: #e0e0e0;
+    --color-accent-dark: #1a0a2e;
+    
+    /* Variables de estilo retro */
+    --font-title: 'VT323', monospace; 
+    --font-body: 'Fira Code', monospace;
+    
+    /* Bordes y sombras estilo ventanas antiguas */
+    --border-retro: 2px solid var(--color-primary);
+    --box-shadow-retro: 4px 4px 0px var(--color-secondary);
+}
+
+/* ==========================================================================
+   2. ESTILOS BASE Y ATMÓSFERA CRT
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: clip;
+    cursor: crosshair; 
+    
+    /* Suavizado de fuentes para mejorar la nitidez en Linux/Pop!_OS y otros OS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- EL FILTRO CRT SUAVE --- */
+body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    
+    /* MODIFICACIÓN: Bajamos la opacidad de 0.25 a 0.07 (más sutil) 
+       y el ruido de color de 0.06 a 0.02 para que no distorsione el texto */
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.07) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+    z-index: 9999;
+    
+    /* MODIFICACIÓN: Reducimos a 2px para que la rejilla sea más fina y limpia */
+    background-size: 100% 2px, 2px 100%;
+    pointer-events: none;
+}
+
+/* Fondo con patrón de cuadrícula */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+}
+
+/* ==========================================================================
+   3. TIPOGRAFÍA Y ENLACES
+   ========================================================================== */
+
+   /* Títulos Grandes: Mantienen el efecto WordArt / 3D Cyberpunk */
+h1, h2, h3 {
+    font-family: var(--font-title);
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0px var(--color-primary), -1px -1px 0px var(--color-secondary);
+}
+
+/* Títulos Pequeños (Subtítulos de modales, tags, etc.): 
+   Removemos la doble sombra para evitar que los colores colapsen */
+h4, h5, h6 {
+    font-family: var(--font-title);
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a {   
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--color-primary);
+    text-shadow: 0 0 4px var(--color-primary);
+}
+
+/* ==========================================================================
+   4. UTILIDADES GLOBALES (Scrollbar Retro)
+   ========================================================================== */
+::-webkit-scrollbar {
+    width: 16px; /* Más ancho, estilo Windows 98 */
+}
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+    border-left: 2px solid var(--color-secondary);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border: 2px solid var(--color-secondary);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-primary);
+}

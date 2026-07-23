@@ -1,0 +1,29 @@
+<section id="arcade">
+    <div class="section-container">
+        <h2 class="section-title fade-in-element" data-key="ui_text.nav.arcade">👾 Santi's Arcade 👾</h2>
+        <div class="gallery-grid">
+            {% for juego in arcade_games %}
+            <div class="retro-window fade-in-element">
+                
+                <div class="retro-title-bar bg-magenta">
+                    <span class="window-title" data-key="arcade_games.{{ loop.index0 }}.titulo">{{ juego.titulo.es }}</span>
+                    <div class="window-controls"><span>_</span><span>☐</span><span>X</span></div>
+                </div>
+                
+                <div class="retro-window-content" style="text-align: center;">
+                    <img src="{{ url_for('static', filename=juego.thumbnail) }}" alt="{{ juego.titulo.es }}" style="width: 100%; border: 2px solid var(--color-secondary); margin-bottom: 1rem;">
+                    
+                    <p data-key="arcade_games.{{ loop.index0 }}.descripcion">{{ juego.descripcion.es }}</p>
+                    
+                    <a href="#" class="btn-primary insert-coin-btn" 
+                       data-game-id="{{ juego.id }}" 
+                       data-controles="{{ juego.controles_html.es }}"
+                       style="width: 100%; box-sizing: border-box; margin-top: 1rem; text-align: center; display: inline-block;">
+                        [ INSERT COIN ]
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

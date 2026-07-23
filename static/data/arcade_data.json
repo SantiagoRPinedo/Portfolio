@@ -1,0 +1,34 @@
+{
+  "arcade_games": [
+    {
+      "id": "cyber_runner",
+      "titulo": { "es": "Cyber Runner", "en": "Cyber Runner" },
+      "descripcion": { "es": "Inserta una moneda virtual para jugar.", "en": "Insert a virtual coin to play." },
+      "controles_html": { 
+        "es": "<kbd style=\"background: #fff; color: #000; padding: 2px 8px; border-radius: 4px;\">ESPACIO</kbd> o <kbd style=\"background: #fff; color: #000; padding: 2px 8px; border-radius: 4px;\">CLIC</kbd> para saltar" 
+      },
+      "thumbnail": "images/arcade/cyber_runner.png",
+      "url_juego": "cyber_runner" 
+    },
+    {
+      "id": "galaxy_shooter",
+      "titulo": { "es": "Galaxy Shooter", "en": "Galaxy Shooter" },
+      "descripcion": { "es": "Inserta una moneda virtual para jugar.", "en": "Insert a virtual coin to play." },
+      "controles_html": { 
+        "es": "<kbd style=\"background: #fff; color: #000; padding: 2px 8px; border-radius: 4px;\">W A S D</kbd> para moverte y <kbd style=\"background: #fff; color: #000; padding: 2px 8px; border-radius: 4px;\">ESPACIO</kbd> para disparar" 
+      },
+      "thumbnail": "images/arcade/galaxy.jpg",
+      "url_juego": "galaxy_shooter" 
+    },
+    {
+      "id": "breakout",
+      "titulo": { "es": "Data_Stream_breaker", "en": "Data_Stream_breaker" },
+      "descripcion": { "es": "Inserta una moneda virtual para jugar.", "en": "Insert a virtual coin to play." },
+      "controles_html": { 
+        "es": "<kbd style=\"background: #fff; color: #000; padding: 2px 8px; border-radius: 4px;\">A D</kbd> para moverte y <kbd style=\"background: #fff; color: #000; padding: 2px 8px; border-radius: 4px;\">ESPACIO</kbd> para disparar" 
+      },
+      "thumbnail": "images/arcade/breakout.png",
+      "url_juego": "breakout" 
+    }
+  ]
+}

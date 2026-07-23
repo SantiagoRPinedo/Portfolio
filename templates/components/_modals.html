@@ -1,0 +1,110 @@
+<!-- MODALES DE PROYECTOS -->
+{% for proyecto in proyectos %}
+<div id="modal-{{ proyecto.id }}" class="modal">
+    <div class="modal-content"> 
+        
+        <div class="retro-title-bar bg-magenta">
+            <span class="window-title" data-key="proyectos_personales.{{ loop.index0 }}.titulo">{{ proyecto.titulo.es }}</span>
+            <div class="window-controls">
+                <span>_</span><span>☐</span><span class="close-button">X</span>
+            </div>
+        </div>
+
+        <div class="modal-inner-content">
+            <div class="modal-description">
+                <ul>
+                    {% set proyecto_index = loop.index0 %}
+                    {% for item in proyecto.descripcion_completa %}
+                    <li class="proyecto-item" data-key="proyectos_personales.{{ proyecto_index }}.descripcion_completa.{{ loop.index0 }}">{{ item.es }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="modal-tags">
+                <h4 data-key="ui_text.modal.technologies">{{ ui_text.modal.technologies.es }}</h4>
+                <div class="tags-container">
+                    {% for tag in proyecto.tags %}<span class="tag">{{tag}}</span>{% endfor %}
+                </div>
+            </div>
+            
+            {% if proyecto.url_repo %}
+            <a href="{{ proyecto.url_repo }}" class="btn-primary repo-btn" target="_blank" data-key="ui_text.modal.repo_button">{{ ui_text.modal.repo_button.es }}</a>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+{% endfor %}
+
+<!-- MODALES DE EXPERIENCIA -->
+{% for exp in experiencia %}
+<div id="modal-{{ exp.id }}" class="modal">
+    <div class="modal-content"> 
+        
+        <div class="retro-title-bar bg-cyan">
+            <span class="window-title" data-key="experiencia.{{ loop.index0 }}.titulo">{{ exp.titulo.es }}</span>
+            <div class="window-controls">
+                <span>_</span><span>☐</span><span class="close-button">X</span>
+            </div>
+        </div>
+
+        <div class="modal-inner-content">
+            <p class="company company-title">
+                {{ exp.empresa }} [{{ exp.fecha }}]
+            </p>
+            
+            <div class="modal-description">
+                <h4 data-key="ui_text.modal.achievements">{{ ui_text.modal.achievements.es }}</h4>
+                <ul>
+                    {% set exp_index = loop.index0 %}
+                    {% for item in exp.descripcion_completa %}
+                    <li class="experiencia-item" data-key="experiencia.{{ exp_index }}.descripcion_completa.{{ loop.index0 }}">{{ item.es }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="modal-tags">
+                <h4 data-key="ui_text.modal.technologies">{{ ui_text.modal.technologies.es }}</h4>
+                <div class="tags-container">
+                    {% for tag in exp.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endfor %}
+
+<!-- MODAL DEL ARCADE -->
+<div id="arcade-modal" class="modal">
+    <div class="modal-content retro-window bg-magenta fade-in-element arcade-modal-content">
+        <div class="retro-title-bar">
+            <span class="window-title" id="arcade-game-title">Cyber_Runner.exe</span>
+            <div class="window-controls">
+                <span>_</span><span>☐</span><span class="close-arcade">X</span>
+            </div>
+        </div>
+        
+        <div class="retro-window-content arcade-window-content">
+            <!-- El lienzo (Canvas) donde dibujaremos el juego -->
+            <canvas id="gameCanvas" class="arcade-canvas" width="700" height="500"></canvas>
+            
+            <!-- Interfaz superpuesta (Score y Game Over) -->
+            <div id="game-ui" class="arcade-ui">
+                <span id="score-display">SCORE: 0</span>
+                <span id="hi-score-display">HI: 0</span>
+            </div>
+            
+            <div id="game-over-screen" class="arcade-game-over">
+                <h2 class="game-over-title">GAME OVER</h2>
+                <p class="game-over-subtitle">Presiona ESPACIO para reiniciar</p>
+            </div>
+        </div>
+        
+        <div class="game-controls-container">
+            <p id="game-controls-text">
+                Controles: <kbd>ESPACIO</kbd> o <kbd>CLIC</kbd> para saltar
+            </p>
+        </div>
+    </div>
+</div>

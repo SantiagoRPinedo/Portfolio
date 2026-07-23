@@ -1,0 +1,23 @@
+<section id="experiencia">
+    <div class="section-container">
+        <h2 class="section-title fade-in-element" data-key="ui_text.experience.title">{{ ui_text.experience.title.es }}</h2>
+        <div class="experiencia-container">
+            {% for exp in experiencia %}
+            <div class="retro-window fade-in-element experiencia-card" data-modal-id="{{ exp.id }}" style="min-width: 320px; cursor: pointer; border-color: var(--color-secondary); padding: 0;">
+                
+                <div class="retro-title-bar bg-cyan">
+                    <span class="window-title">Exp_Log.exe</span>
+                    <div class="window-controls"><span>_</span><span>☐</span><span>X</span></div>
+                </div>
+                
+                <div class="retro-window-content">
+                    <h3 data-key="experiencia.{{ loop.index0 }}.titulo" style="font-size: 1.2rem; margin-top: 0; color: white; text-shadow: none; font-weight: bold;">{{ exp.titulo.es }}</h3>
+                    <p class="company" style="font-family: var(--font-title); font-size: 1.1rem; color: var(--color-primary);">{{ exp.empresa }}</p>
+                    <p style="font-size: 0.8rem; margin-bottom: 1rem;">[{{ exp.fecha }}]</p>
+                    <p data-key="experiencia.{{ loop.index0 }}.resumen">{{ exp.resumen.es }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

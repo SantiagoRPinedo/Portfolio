@@ -1,0 +1,32 @@
+<section id="qna">
+    <div class="section-container">
+        <h2 class="section-title fade-in-element" data-key="ui_text.nav.faq">💬 Santi FAQ 💬</h2>
+        
+        <div class="retro-window fade-in-element" style="max-width: 800px; margin: 0 auto;">
+            
+            <div class="retro-title-bar bg-cyan">
+                <span class="window-title">C:\Santi\FAQ.exe</span>
+                <div class="window-controls">
+                    <span>_</span><span>☐</span><span>X</span>
+                </div>
+            </div>
+            
+            <div class="retro-window-content">
+                {% for qa in q_and_a %}
+                <div style="margin-bottom: 1.5rem; border-left: 3px solid var(--color-primary); padding-left: 1rem;">
+                    
+                    <h4 style="color: var(--color-secondary); margin-bottom: 0.5rem; text-shadow: none;" data-key="q_and_a.{{ loop.index0 }}.pregunta">
+                        > {{ qa.pregunta.es }}
+                    </h4>
+                    
+                    <p style="margin-top: 0; opacity: 0.9;" data-key="q_and_a.{{ loop.index0 }}.respuesta">
+                        {{ qa.respuesta.es }}
+                    </p>
+                    
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</section>

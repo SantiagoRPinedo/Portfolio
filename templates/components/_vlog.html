@@ -1,0 +1,131 @@
+<section id="vlog-section">
+    <div class="section-container">
+        <h2 class="section-title fade-in-element" data-key="ui_text.nav.vlog">📹 Santi's Life Log 📹</h2>
+        
+        <div class="vlog-layout">
+            
+            <div class="vlog-main-col">
+                <div class="retro-window fade-in-element">
+                    <div class="retro-title-bar bg-magenta">
+                        <span class="window-title">Vlog_Estatus.exe</span>
+                        <div class="window-controls"><span>_</span><span>☐</span><span>X</span></div>
+                    </div>
+                    <div class="retro-window-content" style="text-align: center;">
+                        <p data-key="vlog_estatus.cita" style="color: var(--color-secondary); font-size: 1.1rem; margin-top: 0;">
+                            {{ vlog_estatus.cita.es }}
+                        </p>
+                        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                            {% for tag in vlog_estatus.tags %}
+                            <span class="tag" style="margin:0;" data-key="vlog_estatus.tags.{{ loop.index0 }}.texto">
+                                {{ tag.texto.es }} {{ tag.icono }}
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vlog-feed">
+                    {% for post in vlog_posts %}
+                    <div class="retro-window fade-in-element">
+                        <div class="retro-title-bar bg-magenta">
+                            <span class="window-title" data-key="vlog_posts.{{ loop.index0 }}.titulo">{{ post.titulo.es }}</span>
+                            <span style="color: white; font-size: 0.9rem; font-family: var(--font-title);">{{ post.fecha }}</span>
+                        </div>
+                        
+                        <div class="retro-window-content">
+                            <div style="font-size: 0.85rem; color: var(--color-secondary); margin-bottom: 1.2rem; border-bottom: 1px dashed var(--color-text); padding-bottom: 0.5rem;">
+                                <span data-key="vlog_posts.{{ loop.index0 }}.mood">✨ Mood: {{ post.mood }}</span>
+                            </div>
+                            
+                            {% if post.imagen %}
+                            <div style="margin-bottom: 1.5rem; border: 2px solid var(--color-primary); border-radius: 4px; overflow: hidden;">
+                                <img src="{{ url_for('static', filename=post.imagen) }}" alt="Captura del vlog" style="width: 100%; display: block;">
+                            </div>
+                            {% endif %}
+                            
+                            <p data-key="vlog_posts.{{ loop.index0 }}.contenido" style="white-space: pre-line; margin-bottom: 0;">{{ post.contenido.es }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="vlog-side-col">
+                
+                <div class="retro-window fade-in-element">
+                    <div class="retro-title-bar bg-cyan">
+                        <span class="window-title">Winamp_Mini.exe</span>
+                        <div class="window-controls"><span>_</span><span>☐</span><span>X</span></div>
+                    </div>
+                    <div class="retro-window-content" style="text-align: center; padding: 1rem;">
+                        <div class="music-display">
+                           <marquee scrollamount="4" id="winamp-marquee">
+                               <span id="winamp-song">{{ vlog_winamp.playlist[0] }}</span> 
+                               <span id="winamp-status" data-key="vlog_winamp.estado">{{ vlog_winamp.estado.es }}</span>
+                           </marquee>
+                        </div>
+                        
+                        <div class="vinyl-container">
+                            <div class="vinyl-record rotating" id="winamp-vinyl">
+                                <div class="vinyl-label"></div>
+                            </div>
+                            <div class="vinyl-needle" id="winamp-needle"></div>
+                        </div>
+
+                        <div class="music-controls">
+                            <button id="winamp-prev">⏮</button>
+                            <button id="winamp-play">⏯</button>
+                            <button id="winamp-next">⏭</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="retro-window fade-in-element">
+                    <div class="retro-title-bar bg-magenta">
+                        <span class="window-title">InstaFeed.jpg</span>
+                        <div class="window-controls"><span>_</span><span>☐</span><span>X</span></div>
+                    </div>
+                    
+                    <div class="retro-window-content" style="padding: 1rem; text-align: center; display: flex; flex-direction: column;">
+                        
+                        <a href="{{ instagram.url }}" target="_blank" class="btn-primary" style="display: block; font-size: 1rem; padding: 0.5rem; margin-bottom: 1rem; border-color: var(--color-primary);">
+                            {{ instagram.usuario }}
+                        </a>
+                        
+                        <div class="insta-scroll-area">
+                            <div class="insta-grid">
+                                {% for foto in instagram.fotos %}
+                                    <div class="insta-photo" 
+                                        data-img="{{ url_for('static', filename=foto.img) }}" 
+                                        data-caption-key="instagram.fotos.{{ loop.index0 }}.caption" 
+                                        data-caption-es="{{ foto.caption.es }}">
+                                        
+                                        <img src="{{ url_for('static', filename=foto.img) }}" alt="Insta" onerror="this.style.display='none';" style="width: 100%; height: 100%; object-fit: cover;">
+                                        
+                                        
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <p data-key="instagram.mensaje_final" style="margin-top: 1.5rem; color: var(--color-secondary); font-size: 0.9rem; font-style: italic;">
+                                {{ instagram.mensaje_final.es }}
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Insta --> 
+    <div id="insta-modal">
+        <div class="insta-modal-content fade-in-element">
+            <div style="display:flex; justify-content:flex-end; margin-bottom: 10px;">
+                <span id="close-insta" style="color:var(--color-secondary); cursor:pointer; font-weight:bold; font-size:1.2rem;">X</span>
+            </div>
+            <img id="insta-modal-img" src="" class="insta-modal-img" alt="Post">
+            <p id="insta-modal-caption" style="color: white; font-family: var(--font-body);"></p>
+        </div>
+    </div>
+</section>
